@@ -243,6 +243,7 @@ const signOutUser = async () => {
       // User is signed out
       // ...
       location.href = './login.html';
+      
     }
   });
 

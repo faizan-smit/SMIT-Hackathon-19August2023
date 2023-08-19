@@ -1,6 +1,6 @@
 // app.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, updatePassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, updatePassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
 import { getFirestore, collection, getDocs, addDoc, serverTimestamp, onSnapshot, doc, query, orderBy, where, updateDoc, deleteField, getDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore.js";
 
 
@@ -72,15 +72,15 @@ nameChange.addEventListener("click", nameChangeFunction);
 
 
 onAuthStateChanged(auth, (user) => {
-    console.log(user.email)
-    const userEmail = user.email;
+
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/auth.user
       const uid = user.uid;
     //   location.href = './index.html';
       // ...
-
+      console.log(user.email)
+      const userEmail = user.email;
       
 document.addEventListener('click',async (event) => {
     if (event.target.classList.contains('update')) {
@@ -188,6 +188,7 @@ console.log(user.email);
 
       console.log("User is signed out")
       location.href = './index.html';
+
     }
   });
 
@@ -209,7 +210,18 @@ console.log(user.email);
 
     namefunct()
 
-  
-    document.addEventListener('click',async (event) => {
 
-    });
+
+
+    const signOutUser = async () => {
+        try {
+          await signOut(auth);
+          console.log("User signed out");
+          window.location.href = `./login.html`;
+        } catch (error) {
+          console.error("Error signing out user", error);
+        }
+      };
+
+
+    document.getElementById("SignOut").addEventListener('click', signOutUser);

@@ -7,3 +7,112 @@
 
 
 }
+
+#Name{
+
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+#Name button{
+    height: 25px;
+    width: 60px;
+    background-color: rgba(0, 0, 0, 0);
+    /* border: 1px solid rgba(11, 34, 240, 0.8); */
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 11px;
+    border: none !important;
+}
+
+#changePassword{
+
+    height: 35px;
+    width: 120px;
+    background-color: rgba(0, 0, 0, 0);
+    /* border: 1px solid rgba(11, 34, 240, 0.8); */
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 11px;
+    border: none !important;
+
+}
+
+#theImage{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+
+/* For NavBar  */
+
+
+#navbar{
+
+    /* height: 80px !important; */
+    background-color: white;
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+    color: white !important;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    width: 100vw !important;
+}
+
+.navbar-brand{
+    /* color: royalblue !important; */
+    color: rgba(11, 34, 240, 0.8) !important;
+    font-family: Satisfy, Arial, Helvetica, sans-serif;
+    font-size: 1.5em !important;
+}
+
+.nav-link{
+
+    color: rgba(11, 34, 240, 0.8) !important;
+    margin: 0.5em !important;
+
+
+}
+
+
+.box-link{
+
+    background-color: rgba(11, 34, 240, 0.8) !important;
+    border-radius: 25px !important;
+    width: 100px !important;
+    color: white !important;
+    text-align: center !important;
+}
+
+#title{
+
+    color: rgba(11, 34, 240, 0.8) !important;
+    font-family: Satisfy, Arial, Helvetica, sans-serif !important;
+
+}
+
+title {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #00ff00 !important;
+  }
+
+
+
+/* END NavBar  
+
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+
+*/

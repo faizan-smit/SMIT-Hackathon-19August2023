@@ -37,6 +37,14 @@ const onlyUserPosts = (event) => {
     const showDiv = document.getElementById("blog");
     showDiv.innerHTML = "";
 
+    let goBack = document.createElement("a");
+    goBack.innerHTML = "Go Back";
+    goBack.classList.add("goback");
+    goBack.addEventListener("click", ()=>{
+        location.reload()
+    })
+    document.getElementById("blog").appendChild(goBack);
+
     onSnapshot(q, (querySnapshot) => {
         querySnapshot.forEach((snapshot) => {
             if (snapshot.data().userEmail === theUser){
@@ -207,3 +215,58 @@ const onlyUserPosts = (event) => {
 };
 
 displayFunction();
+
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/auth.user
+      const uid = user.uid;
+
+      document.getElementById("loginNav").style.display = "none";
+      
+      // ...
+    } else {
+      // User is signed out
+      // ...
+
+      document.getElementById("logoutNav").style.display = "none";
+      document.getElementById("dashboard").style.display = "none";
+      document.getElementById("profile").style.display = "none";
+
+
+    }
+  });
+
+
+  const signOutUser = async () => {
+    try {
+      await signOut(auth);
+      console.log("User signed out");
+      window.location.href = `./login.html`;
+    } catch (error) {
+      console.error("Error signing out user", error);
+    }
+  };
+
+
+document.getElementById("SignOut").addEventListener('click', signOutUser);
+
+
+
+const currentTime = new Date();
+const currentHour = currentTime.getHours();
+
+let greeting;
+
+if (currentHour >= 5 && currentHour < 12) {
+    greeting = "Good morning!";
+} else if (currentHour >= 12 && currentHour < 18) {
+    greeting = "Good afternoon!";
+} else {
+    greeting = "Good evening!";
+}
+
+console.log(greeting);
+
+document.getElementById("greeting").innerHTML = greeting;

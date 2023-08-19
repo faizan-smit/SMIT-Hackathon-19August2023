@@ -45,6 +45,7 @@ document.getElementById("signin-submit").addEventListener('submit', (event) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           console.log(errorMessage);
+          alert("Error please check console logs")
         });
 
 
