@@ -197,6 +197,8 @@ const signOutUser = async () => {
 
         await deleteDoc(doc(db, "Blogs", delBookInfo));
 
+        location.reload();
+
 
       }
 
@@ -243,7 +245,7 @@ const signOutUser = async () => {
       // User is signed out
       // ...
       location.href = './login.html';
-      
+
     }
   });
 
@@ -290,6 +292,8 @@ const updateFunction = async (ref, title, content, user) => {
                           postContent: content,
                           userEmail: user,
                         });
+
+                        location.reload();
 
   // ...
 };
